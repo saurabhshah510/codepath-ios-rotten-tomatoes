@@ -2,7 +2,7 @@
 Codepath iOS app integrating with rotten tomatoes API
 This is a movies app displaying box office and top rental DVDs using the Rotten Tomatoes API.
 
-Time spent: <Number of hours spent>
+Time spent: 5 hours
 
 Features
 Required
@@ -22,7 +22,7 @@ Optional
 [ ] Customize the highlight and selection effect of the cell.
 [ ] Customize the navigation bar.
 Walkthrough
-Video Walkthrough
+![Video Walkthrough](rotten_tomatoes.gif)
 
 Credits
 Rotten Tomatoes API

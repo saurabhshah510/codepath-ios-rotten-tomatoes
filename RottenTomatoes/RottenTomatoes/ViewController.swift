@@ -45,6 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         if (self.movies != nil && self.movies!.count != 0) {
             let movie = self.movies![indexPath.row]
             movieCell.movieLabel.text = movie["title"] as? String
+            movieCell.descriptionLabel.text = movie["synopsis"] as? String
         }
         return movieCell
     }

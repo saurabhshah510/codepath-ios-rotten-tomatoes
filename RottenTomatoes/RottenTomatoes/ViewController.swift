@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let CELL_NAME = "com.codepath.rottentomatoes.moviecell"
     var wasShifted = false
-    var shiftedLength = 40
     @IBOutlet weak var movieTableView: UITableView!
     var refreshControl: UIRefreshControl!
     
@@ -43,7 +42,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if error == nil{
                 if self.wasShifted{
                     var tempFrame = self.movieTableView.frame
-                    tempFrame.origin.y -= self.shiftedLength
+                    tempFrame.origin.y -= 40
                     self.movieTableView.frame = tempFrame
                     self.wasShifted = false
                 }
@@ -54,7 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
             } else{
                 var tempFrame = self.movieTableView.frame
-                tempFrame.origin.y += self.shiftedLength
+                tempFrame.origin.y += 40
                 self.movieTableView.frame = tempFrame
                 self.wasShifted = true
                 self.networkErrorLabel.hidden = false

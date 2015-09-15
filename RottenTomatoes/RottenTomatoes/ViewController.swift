@@ -52,10 +52,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     self.movies = responseDictionary!["movies"] as? [NSDictionary]
                 }
             } else{
-                var tempFrame = self.movieTableView.frame
-                tempFrame.origin.y += 40
-                self.movieTableView.frame = tempFrame
-                self.wasShifted = true
+                if !self.wasShifted{
+                    var tempFrame = self.movieTableView.frame
+                    tempFrame.origin.y += 40
+                    self.movieTableView.frame = tempFrame
+                    self.wasShifted = true
+                }
                 self.networkErrorLabel.hidden = false
             }
             self.movieTableView.reloadData()

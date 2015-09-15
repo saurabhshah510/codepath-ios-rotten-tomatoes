@@ -26,7 +26,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 self.movieTableView.reloadData()
             }            
         }
-        movieTableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,8 +33,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         // Dispose of any resources that can be recreated.
     }
     
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        print("hi")
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     

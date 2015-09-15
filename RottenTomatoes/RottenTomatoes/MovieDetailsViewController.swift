@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class MovieDetailsViewController: UIViewController {
     
@@ -19,6 +20,10 @@ class MovieDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = self.movie["title"] as? String
+        synopsisLabel.text = self.movie["synopsis"] as? String
+        let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
+        imageView.setImageWithURL(url)
+
         // Do any additional setup after loading the view.
     }
 

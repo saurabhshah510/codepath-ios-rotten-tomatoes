@@ -13,18 +13,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let CELL_NAME = "com.codepath.rottentomatoes.moviecell"
     @IBOutlet weak var movieTableView: UITableView!
+    
+    @IBOutlet weak var networkErrorLabel: UILabel!
     var movies: [NSDictionary]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.networkErrorLabel.hidden = true
         let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5")
         let request = NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
-            let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary
-            if responseDictionary != nil{
-                self.movies = responseDictionary!["movies"] as? [NSDictionary]
-                self.movieTableView.reloadData()
-            }            
+            if error == nil{
+                self.networkErrorLabel.hidden = true
+                let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary
+                if responseDictionary != nil{
+                    self.movies = responseDictionary!["movies"] as? [NSDictionary]
+                    self.movieTableView.reloadData()                
+                }
+            } else{
+                self.networkErrorLabel.hidden = false
+            }
         }
     }
 

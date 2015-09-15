@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class ViewController: UIViewController, UITableViewDataSource {
     
@@ -47,6 +48,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             movieCell.movieLabel.text = movie["title"] as? String
             movieCell.descriptionLabel.text = movie["synopsis"] as? String
             let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
+            movieCell.posterView.setImageWithURL(url)
         }
         return movieCell
     }

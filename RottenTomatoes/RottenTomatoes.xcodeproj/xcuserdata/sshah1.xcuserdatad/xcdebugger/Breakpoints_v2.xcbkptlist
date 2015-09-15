@@ -10,58 +10,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RottenTomatoes/ViewController.swift"
-            timestampString = "463908602.621882"
+            timestampString = "463976281.542675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2"
-            endingLineNumber = "2">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RottenTomatoes.ViewController.__deallocating_deinit"
-                  moduleName = "RottenTomatoes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sshah1/Development/iOSDevelopment/codepath-ios-rotten-tomatoes/RottenTomatoes/RottenTomatoes/ViewController.swift"
-                  timestampString = "463908602.644291"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "19">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RottenTomatoes.ViewController.init (RottenTomatoes.ViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; RottenTomatoes.ViewController"
-                  moduleName = "RottenTomatoes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sshah1/Development/iOSDevelopment/codepath-ios-rotten-tomatoes/RottenTomatoes/RottenTomatoes/ViewController.swift"
-                  timestampString = "463908602.644569"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "67">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "RottenTomatoes.ViewController.init (RottenTomatoes.ViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; Swift.Optional&lt;RottenTomatoes.ViewController&gt;"
-                  moduleName = "RottenTomatoes"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sshah1/Development/iOSDevelopment/codepath-ios-rotten-tomatoes/RottenTomatoes/RottenTomatoes/ViewController.swift"
-                  timestampString = "463908602.644734"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "27">
-               </Location>
-            </Locations>
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RottenTomatoes/ViewController.swift"
+            timestampString = "463976358.228739"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

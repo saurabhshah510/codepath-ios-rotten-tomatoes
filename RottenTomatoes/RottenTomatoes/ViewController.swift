@@ -13,13 +13,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     let CELL_NAME = "com.codepath.rottentomatoes.moviecell"
     @IBOutlet weak var movieTableView: UITableView!
+    var refreshControl: UIRefreshControl!
     
     @IBOutlet weak var networkErrorLabel: UILabel!
     var movies: [NSDictionary]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.networkErrorLabel.hidden = true
+
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "onRefresh", forControlEvents: UIControlEvents.ValueChanged)
+        movieTableView.insertSubview(refreshControl, atIndex: 0)
+        
+        makeApiCall()
+    }
+    
+    func onRefresh() {
+        makeApiCall()
+    }
+    
+    func makeApiCall(){
         let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5")
         let request = NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
@@ -28,13 +43,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary
                 if responseDictionary != nil{
                     self.movies = responseDictionary!["movies"] as? [NSDictionary]
-                    self.movieTableView.reloadData()                
+
                 }
             } else{
+                self.movies = []
                 self.networkErrorLabel.hidden = false
             }
+            self.movieTableView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

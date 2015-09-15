@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITableViewDataSource {
+    
+    let CELL_NAME = "com.codepath.rottentomatoes.moviecell"
+    @IBOutlet weak var movieTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +22,21 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let movieCell = tableView.dequeueReusableCellWithIdentifier(CELL_NAME) as! MovieCell
+        movieCell.movieLabel.text = "Fast and Furious \(indexPath.row)"
+        return movieCell
+    }
 
 }
 
+class MovieCell: UITableViewCell{
+    
+    @IBOutlet weak var movieLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+}

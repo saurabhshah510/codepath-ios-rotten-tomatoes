@@ -12,6 +12,8 @@ import AFNetworking
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let CELL_NAME = "com.codepath.rottentomatoes.moviecell"
+    var wasShifted = false
+    var shiftedLength = 40
     @IBOutlet weak var movieTableView: UITableView!
     var refreshControl: UIRefreshControl!
     
@@ -39,14 +41,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let request = NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
             if error == nil{
+                if self.wasShifted{
+                    var tempFrame = self.movieTableView.frame
+                    tempFrame.origin.y -= self.shiftedLength
+                    self.movieTableView.frame = tempFrame
+                    self.wasShifted = false
+                }
                 self.networkErrorLabel.hidden = true
                 let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary
                 if responseDictionary != nil{
                     self.movies = responseDictionary!["movies"] as? [NSDictionary]
-
                 }
             } else{
-                self.movies = []
+                var tempFrame = self.movieTableView.frame
+                tempFrame.origin.y += self.shiftedLength
+                self.movieTableView.frame = tempFrame
+                self.wasShifted = true
                 self.networkErrorLabel.hidden = false
             }
             self.movieTableView.reloadData()

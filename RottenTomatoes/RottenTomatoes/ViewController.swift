@@ -46,6 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource {
             let movie = self.movies![indexPath.row]
             movieCell.movieLabel.text = movie["title"] as? String
             movieCell.descriptionLabel.text = movie["synopsis"] as? String
+            let url = NSURL(string: movie.valueForKeyPath("posters.thumbnail") as! String)!
         }
         return movieCell
     }
@@ -54,6 +55,7 @@ class ViewController: UIViewController, UITableViewDataSource {
 
 class MovieCell: UITableViewCell{
     
+    @IBOutlet weak var posterView: UIImageView!
     @IBOutlet weak var movieLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
 }

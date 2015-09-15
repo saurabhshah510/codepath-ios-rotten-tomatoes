@@ -1,0 +1,3 @@
+target 'RottenTomatoes' do
+  pod 'AFNetworking'
+end

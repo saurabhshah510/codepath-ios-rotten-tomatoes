@@ -8,6 +8,7 @@
 
 import UIKit
 import AFNetworking
+import JTProgressHUD
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -36,6 +37,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func makeApiCall(){
+        JTProgressHUD.show()
         let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=dagqdghwaq3e3mxyrp7kmmj5")
         let request = NSURLRequest(URL: url!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
@@ -62,6 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
             self.movieTableView.reloadData()
             self.refreshControl.endRefreshing()
+            JTProgressHUD.hide()
         }
     }
     

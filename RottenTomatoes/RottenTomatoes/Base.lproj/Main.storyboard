@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Hvb-Yc-77o">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="npL-Co-cMv">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
     </dependencies>
@@ -16,7 +16,7 @@
                                 <rect key="frame" x="20" y="74" width="280" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" id="AcX-nr-pSX">
@@ -28,14 +28,14 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7rg-8I-ht4" id="Sdc-JF-fMx">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="j1F-5P-8Au">
                                                     <rect key="frame" x="115" y="0.0" width="190" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="sUK-5S-96P">
@@ -46,7 +46,7 @@
                                                     <rect key="frame" x="115" y="29" width="190" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -75,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="407"/>
+            <point key="canvasLocation" x="1198" y="345"/>
         </scene>
         <!--Movie Details View Controller-->
         <scene sceneID="s0c-5b-6ux">
@@ -108,7 +108,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -122,12 +122,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0d-f3-y57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1254" y="407"/>
+            <point key="canvasLocation" x="1674" y="345"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Box Office-->
         <scene sceneID="r1V-SR-O1m">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hvb-Yc-77o" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Box Office" id="3lZ-86-lCh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bWS-7H-3as">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -140,7 +141,66 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mGV-fV-xww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="461" y="407"/>
+            <point key="canvasLocation" x="712" y="345"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="uM5-aI-soR">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="npL-Co-cMv" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Jrk-33-z9j">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Hvb-Yc-77o" kind="relationship" relationship="viewControllers" id="1c4-Oo-gVT"/>
+                        <segue destination="1rf-v6-XOH" kind="relationship" relationship="viewControllers" id="Lbn-jS-BT6"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nVN-xr-PgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="771"/>
+        </scene>
+        <!--DVDs-->
+        <scene sceneID="j2N-N7-E4I">
+            <objects>
+                <viewController id="KOa-2H-94l" customClass="DVDViewController" customModule="RottenTomatoes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S4I-Fg-dAN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="15y-zX-QoJ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="DVDs" id="Oaj-X0-SkR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qcA-7M-bzZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1198" y="1146"/>
+        </scene>
+        <!--DVD-->
+        <scene sceneID="xwT-1h-uF2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1rf-v6-XOH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="DVD" id="fkW-u9-hFt"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0eT-I9-23O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KOa-2H-94l" kind="relationship" relationship="rootViewController" id="tSX-2K-9iQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6i0-tP-qyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712" y="1146"/>
         </scene>
     </scenes>
 </document>

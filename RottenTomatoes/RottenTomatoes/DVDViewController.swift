@@ -35,12 +35,23 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func makeApiCall(){
         JTProgressHUD.show()
+        let url = NSURL(string: "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/current_releases.json?apikey=dagqdghwaq3e3mxyrp7kmmj5")
+        let request = NSURLRequest(URL: url!)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
+            if error == nil{
+                let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as? NSDictionary
+                if responseDictionary != nil{
+                    self.dvds = responseDictionary!["movies"] as? [NSDictionary]
+                }
+            }else{
+                
+            }
+            self.DVDTableView.reloadData()
+            self.refreshControl.endRefreshing()
+            JTProgressHUD.hide()
+        }
         
         //in call back
-        self.DVDTableView.reloadData()
-        self.refreshControl.endRefreshing()
-        JTProgressHUD.hide()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,7 +60,11 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return 10
+        if self.dvds != nil{
+            return self.dvds!.count
+        }else{
+            return 0
+        }
     }
     
     // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -57,6 +72,14 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let dvdCell = tableView.dequeueReusableCellWithIdentifier(CELL_NAME, forIndexPath: indexPath) as! DVDTableViewCell
+        if (self.dvds != nil && self.dvds!.count != 0){
+            let dvd = self.dvds![indexPath.row]
+            let url = NSURL(string: dvd.valueForKeyPath("posters.thumbnail") as! String)!
+            dvdCell.dvdImageView.setImageWithURL(url)
+            dvdCell.titleLabel.text = dvd["title"] as? String
+            dvdCell.synopsisLabel.text = dvd["synopsis"] as? String
+            
+        }
         return dvdCell
     }
     
@@ -75,5 +98,8 @@ class DVDViewController: UIViewController, UITableViewDataSource, UITableViewDel
 
 class DVDTableViewCell: UITableViewCell{
     
+    @IBOutlet weak var dvdImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var synopsisLabel: UILabel!
 }
 
